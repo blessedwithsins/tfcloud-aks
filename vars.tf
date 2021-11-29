@@ -22,13 +22,6 @@ variable "node_size" {
   default = "Standard_D2_v2"
 }
 
-variable "service_principal" {
-  type = object({
-     client_secret = string
-  })
-  description = "The service principal to use"
-}
-
 variable dns_prefix {
 }
 
