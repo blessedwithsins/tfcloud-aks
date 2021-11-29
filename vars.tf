@@ -1,29 +1,25 @@
-variable "resource_group_name" {
-  description = "The resource group name to be imported"
-  default = "tfcloud"
-}
-
-variable "location" {
-    description = "The resource group will be in this location"
-    default = "centralus"
-}
-
 variable "cluster_name" {
-    description = "The resource group will be in this location"
-    default = "tfcloud"
+
+}
+
+variable "resource_group_name" {
+
 }
 
 variable "environment" {
-    description = "envinfo"
-    default = "test"
+
+}
+
+variable "location" {
+  default = "East US"
 }
 
 variable "node_count" {
-  default = 1
+  default = 3
 }
 
 variable "node_size" {
-  default = "Standard_B2ms"
+  default = "Standard_D2_v2"
 }
 
 variable "service_principal" {
@@ -34,8 +30,6 @@ variable "service_principal" {
   description = "The service principal to use"
 }
 
-variable "dns_prefix" {
-    description = "The resource group will be in this location"
-    default = "tfcloud"   
+variable dns_prefix {
 }
 
