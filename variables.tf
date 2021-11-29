@@ -1,20 +1,17 @@
 variable "cluster_name" {
-    description = "The resource group will be in this location"
-    default = "tfcloud"
+  
 }
 
 variable "resource_group_name" {
-    description = "The resource group will be in this location"
-    default = "tfcloud"
+  
 }
 
 variable "environment" {
-    description = "The resource group will be in this location"
-    default = "test"
+ 
 }
 
 variable "location" {
-  default = "centralus"
+
 }
 
 variable "node_count" {
@@ -34,7 +31,6 @@ variable "service_principal" {
 }
 
 variable "dns_prefix" {
-    description = "The resource group will be in this location"
-    default = "tfcloud"
+   
 }
 
