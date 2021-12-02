@@ -25,3 +25,9 @@ variable "node_size" {
 variable dns_prefix {
 }
 
+variable client_id {
+}
+
+variable client_secret {
+} 
+
