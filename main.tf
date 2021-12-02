@@ -37,3 +37,4 @@ provider "kubernetes" {
     command     = "az"
     args        = ["aks", "get-credentials", "--name", "tfcloud", "--resource-group", "tfcloud"]
   }
+}
