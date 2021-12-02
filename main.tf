@@ -29,6 +29,10 @@ resource "azurerm_kubernetes_cluster" "aks_cluster" {
   }
 }
 
+data "aks_cluster" {
+  name = "tfcloud"
+}
+
 provider "kubernetes" {
   host                   = data.azurerm_kubernetes_cluster.aks_cluster.name.kube_config.0.host
   cluster_ca_certificate = base64decode(data.azurerm_kubernetes_cluster.aks_cluster.name.kube_config.0.cluster_ca_certificate)
