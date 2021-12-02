@@ -1,5 +1,6 @@
 data "azurerm_kubernetes_cluster" "aks_cluster" {
   name = "tfcloud"  
+  resource_group_name = "tfcloud" 
 }
 
 provider "kubernetes" {
