@@ -33,5 +33,3 @@ resource "null_resource" "provision" {
   provisioner "local-exec" {
     command = "rm -rf ~/.kube && rm -rf /root/.kube && az aks get-credentials -n ${azurerm_kubernetes_cluster.aks_cluster.name} -g ${azurerm_resource_group.resource_group.name}"
   }
-
-
