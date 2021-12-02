@@ -30,8 +30,8 @@ resource "azurerm_kubernetes_cluster" "aks_cluster" {
 }
 
 provider "kubernetes" {
-  host                   = data.azurerm_kubernetes_cluster.tfcloud.kube_config.0.host
-  cluster_ca_certificate = base64decode(data.azurerm_kubernetes_cluster.tfcloud.kube_config.0.cluster_ca_certificate)
+  host                   = data.azurerm_kubernetes_cluster.aks_cluster.name.kube_config.0.host
+  cluster_ca_certificate = base64decode(data.azurerm_kubernetes_cluster.aks_cluster.name.kube_config.0.cluster_ca_certificate)
   exec {
     api_version = "client.authentication.k8s.io/v1alpha1"
     command     = "az"
