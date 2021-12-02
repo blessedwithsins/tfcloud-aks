@@ -1,3 +1,7 @@
+provider "azurerm" {
+  features {}
+}
+
 data "azure_aks_cluster" "aks_cluster" {
   name = var.cluster_name
 }
