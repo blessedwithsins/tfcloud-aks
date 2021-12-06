@@ -25,9 +25,9 @@ spec:
         }
 
         correct_registry(image) {
-        startswith(image, "********.azurecr.io/")
+        startswith(image, "wardaddy.azurecr.io/")
         }
 
         correct_registry(image) {
-        startswith(image, "***************.azurecr.io/")
+        startswith(image, "wardaddy.azurecr.io/")
         }
