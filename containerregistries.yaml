@@ -1,0 +1,33 @@
+apiVersion: templates.gatekeeper.sh/v1beta1
+kind: ConstraintTemplate
+metadata:
+  name: k8sazurecontainerallowedregistries
+spec:
+  crd:
+    spec:
+      names:
+        kind: K8sAzureContainerAllowedRegistries
+      validation:
+        # Schema for the `parameters` field
+        openAPIV3Schema:
+          properties:
+            imageRegex:
+              type: string
+  targets:
+    - target: admission.k8s.gatekeeper.sh
+      rego: |
+        package main
+
+        deny[msg] {
+        c = containers[_]
+        not correct_registry(c.image)
+        msg := sprintf("resource '%v/%v' container %q is not using correct registry", [kind, name, c.name])
+        }
+
+        correct_registry(image) {
+        startswith(image, "********.azurecr.io/")
+        }
+
+        correct_registry(image) {
+        startswith(image, "***************.azurecr.io/")
+        }
