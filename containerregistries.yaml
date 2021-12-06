@@ -6,7 +6,7 @@ spec:
   crd:
     spec:
       names:
-        kind: K8sCustomContainerRegistries
+        kind: K8sAzureContainerAllowedRegistries
       validation:
         # Schema for the `parameters` field
         openAPIV3Schema:
