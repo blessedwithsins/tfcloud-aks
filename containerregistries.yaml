@@ -1,12 +1,12 @@
 apiVersion: templates.gatekeeper.sh/v1beta1
 kind: ConstraintTemplate
 metadata:
-  name: k8scustomcontainerregistries
+  name: K8scustomazurecontainerallowedregistries
 spec:
   crd:
     spec:
       names:
-        kind: K8sAzureContainerAllowedRegistries
+        kind: K8sCustomAzureContainerAllowedRegistries
       validation:
         # Schema for the `parameters` field
         openAPIV3Schema:
