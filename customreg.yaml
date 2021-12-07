@@ -1,0 +1,27 @@
+apiVersion: templates.gatekeeper.sh/v1beta1
+kind: ConstraintTemplate
+metadata:
+  name: k8scustomazurecontainerallowedregistries
+spec:
+  crd:
+    spec:
+      names:
+        kind: K8sCustomAzureContainerAllowedRegistries
+      validation:
+        # Schema for the `parameters` field
+        openAPIV3Schema:
+          properties:
+            imageRegex:
+              type: string
+  targets:
+    - target: admission.k8s.gatekeeper.sh
+      rego: |
+        package kubernetes.admission
+
+        deny[msg] {
+          input.request.kind.kind == "Pod"
+          some i 
+          image_name := input.request.object.spec.containers[i].image
+          not startswith(image_name, "wardaddy.azurecr.io/")
+          msg := sprintf("Pod contains an image from an untrusted registry: %v", [image_name])
+        }
