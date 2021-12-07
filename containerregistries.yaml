@@ -1,7 +1,7 @@
 apiVersion: templates.gatekeeper.sh/v1beta1
 kind: ConstraintTemplate
 metadata:
-  name: K8scustomazurecontainerallowedregistries
+  name: k8scustomazurecontainerallowedregistries
 spec:
   crd:
     spec:
