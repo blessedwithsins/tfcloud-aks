@@ -18,7 +18,7 @@ spec:
       rego: |
         package kubernetes.admission
 
-        deny[msg] {
+        violation[{"msg": msg}] {
           input.request.kind.kind == "Pod"
           some i 
           image_name := input.request.object.spec.containers[i].image
